@@ -1,4 +1,4 @@
-mesos-master
+mesos-slave
 ===========================================================
 Multi-node Setup
 
