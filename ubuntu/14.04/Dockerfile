@@ -20,11 +20,11 @@ RUN curl -fLsS https://get.docker.com/ | sh
 
 CMD ["/usr/sbin/mesos-slave"]
 
-ENV MESOS_WORK_DIR /etc/mesos-slave
-ENV MESOS_CONTAINERIZERS docker,mesos
+#ENV MESOS_WORK_DIR /etc/mesos-slave
+#ENV MESOS_CONTAINERIZERS docker,mesos
 
 # https://mesosphere.github.io/marathon/docs/native-docker.html
-ENV MESOS_EXECUTOR_REGISTRATION_TIMEOUT 5mins
+#ENV MESOS_EXECUTOR_REGISTRATION_TIMEOUT 5mins
 
 VOLUME /etc/mesos-slave
 
