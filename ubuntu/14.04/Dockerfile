@@ -13,19 +13,7 @@ RUN sudo apt-get -y install curl python-setuptools python-pip python-dev python-
 
 # Install mesos.
 RUN sudo apt-get -y install mesos
+RUN sudo apt-get -y install docker-io
 RUN sudo mkdir -p /etc/mesos-slave
-
-# http://docs.docker.com/installation/ubuntulinux/
-RUN curl -fLsS https://get.docker.com/ | sh
-
-CMD ["/usr/sbin/mesos-slave"]
-
-#ENV MESOS_WORK_DIR /etc/mesos-slave
-#ENV MESOS_CONTAINERIZERS docker,mesos
-
-# https://mesosphere.github.io/marathon/docs/native-docker.html
-#ENV MESOS_EXECUTOR_REGISTRATION_TIMEOUT 5mins
-
-VOLUME /etc/mesos-slave
 
 ENTRYPOINT ["mesos-slave"]
