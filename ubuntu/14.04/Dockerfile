@@ -12,7 +12,7 @@ apt-get update
 RUN sudo apt-get -y install curl python-setuptools python-pip python-dev python-protobuf
 
 # Install mesos.
-RUN sudo apt-get -y install mesos \ 
+RUN sudo apt-get -y install mesos=0.28.0-2.0.16.ubuntu1404 \ 
  && sudo apt-get -y install docker
 RUN sudo mkdir -p /etc/mesos-slave
 
