@@ -18,7 +18,6 @@ For this setup, we will need 3 servers with Docker installed on it.
     On host #1
 
 		docker run -d --net="host" \
-		-p 5051:5051 \
 		--entrypoint="mesos-slave" \
 		-e "MESOS_MASTER=zk://${HOST_IP_1}:2181,${HOST_IP_2}:2181,${HOST_IP_3}:2181/mesos" \
 		-e "MESOS_LOG_DIR=/var/log/mesos" \
@@ -27,13 +26,12 @@ For this setup, we will need 3 servers with Docker installed on it.
 		-e MESOS_ISOLATOR=cgroups/cpu,cgroups/mem \
 		-e MESOS_CONTAINERIZERS=docker,mesos \
 		-v /run/docker.sock:/run/docker.sock \
-		mesosinfo/mesos-slave
+		mesosinfo/mesos-slave:0.28.0-ubuntu-14.04
 
 
     On host #2
 
 		docker run -d --net="host" \
-		-p 5051:5051 \
 		--entrypoint="mesos-slave" \
 		-e "MESOS_MASTER=zk://${HOST_IP_1}:2181,${HOST_IP_2}:2181,${HOST_IP_3}:2181/mesos" \
 		-e "MESOS_LOG_DIR=/var/log/mesos" \
@@ -42,12 +40,11 @@ For this setup, we will need 3 servers with Docker installed on it.
 		-e MESOS_ISOLATOR=cgroups/cpu,cgroups/mem \
 		-e MESOS_CONTAINERIZERS=docker,mesos \
 		-v /run/docker.sock:/run/docker.sock \
-		mesosinfo/mesos-slave
+		mesosinfo/mesos-slave:0.28.0-ubuntu-14.04
 
     On host #3
 
 		docker run -d --net="host" \
-		-p 5051:5051 \
 		--entrypoint="mesos-slave" \
 		-e "MESOS_MASTER=zk://${HOST_IP_1}:2181,${HOST_IP_2}:2181,${HOST_IP_3}:2181/mesos" \
 		-e "MESOS_LOG_DIR=/var/log/mesos" \
@@ -56,37 +53,34 @@ For this setup, we will need 3 servers with Docker installed on it.
 		-e MESOS_ISOLATOR=cgroups/cpu,cgroups/mem \
 		-e MESOS_CONTAINERIZERS=docker,mesos \
 		-v /run/docker.sock:/run/docker.sock \
-		mesosinfo/mesos-slave
+		mesosinfo/mesos-slave:0.28.0-ubuntu-14.04
 		
 3. Run the mesos slave on docker no docker containerizers
 
     On host #1
 
 		docker run -d --net="host" \
-		-p 5051:5051 \
 		--entrypoint="mesos-slave" \
 		-e "MESOS_MASTER=zk://${HOST_IP_1}:2181,${HOST_IP_2}:2181,${HOST_IP_3}:2181/mesos" \
 		-e "MESOS_LOG_DIR=/var/log/mesos" \
 		-e "MESOS_LOGGING_LEVEL=INFO" \
-		mesosinfo/mesos-master
+		mesosinfo/mesos-master:0.28.0-ubuntu-14.04
 
     On host #2
 
 		docker run -d --net="host" \
-		-p 5051:5051 \
 		--entrypoint="mesos-slave" \
 		-e "MESOS_MASTER=zk://${HOST_IP_1}:2181,${HOST_IP_2}:2181,${HOST_IP_3}:2181/mesos" \
 		-e "MESOS_LOG_DIR=/var/log/mesos" \
 		-e "MESOS_LOGGING_LEVEL=INFO" \
-		mesosinfo/mesos-master
+		mesosinfo/mesos-master:0.28.0-ubuntu-14.04
 
     On host #3
 
 		docker run -d --net="host" \
-		-p 5051:5051 \
 		--entrypoint="mesos-slave" \
 		-e "MESOS_MASTER=zk://${HOST_IP_1}:2181,${HOST_IP_2}:2181,${HOST_IP_3}:2181/mesos" \
 		-e "MESOS_LOG_DIR=/var/log/mesos" \
 		-e "MESOS_LOGGING_LEVEL=INFO" \
-		mesosinfo/mesos-master
+		mesosinfo/mesos-master:0.28.0-ubuntu-14.04
 		
