@@ -1,5 +1,7 @@
 mesos-slave
 ===========================================================
+<a href='https://imagelayers.io/?images=mesosinfo/mesos-slave:ubuntu-14.04' title='Get your own badge on imagelayers.io'><img src='https://badge.imagelayers.io/mesosinfo/mesos-slave:ubuntu-14.04.svg'></a>
+
 Multi-node Setup
 
 For this setup, we will need 3 servers with Docker installed on it.
